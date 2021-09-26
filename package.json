@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "develop": "npm-run-all --parallel watch:build watch:start watch:compose",
+    "build": "esbuild --bundle --minify --sourcemap --analyze=verbose --tree-shaking=true src/main.ts --outdir=dist",
+    "test": "jest --coverage",
+    "start": "node dist/main.js",
+    "format": "prettier --write *",
+    "check:format": "prettier --check *",
+    "check:typescript": "tsc --noEmit",
+    "watch:build": "esbuild --bundle --minify --sourcemap --watch --tree-shaking=true src/main.ts --outdir=dist",
+    "watch:start": "nodemon dist/main.js",
+    "watch:compose": "docker compose up",
+    "watch:test": "jest --watchAll"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "esbuild": "^0.13.2",
+    "jest": "^27.2.2",
+    "nodemon": "^2.0.13",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.3",
+    "zx": "^4.2.0"
+  }
+}
