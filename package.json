@@ -1,15 +1,14 @@
 {
   "scripts": {
-    "develop": "npm-run-all --parallel develop:*",
-    "check": "npm-run-all --serial check:*",
-    "start": "node dist/main.js",
-    "test": "npm-run-all --serial test:*",
-    "test:unit": "jest --coverage",
     "format": "prettier --write *",
+    "develop": "npm-run-all --parallel develop:*",
+    "develop:build": "node lib/develop.js",
+    "develop:start": "nodemon dist/main.js",
+    "check": "npm-run-all --serial check:*",
     "check:format": "prettier --check *",
     "check:typescript": "tsc --noEmit",
-    "develop:build": "node lib/develop.js",
-    "develop:start": "nodemon dist/main.js"
+    "test": "npm-run-all --serial test:*",
+    "test:unit": "jest --coverage"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",

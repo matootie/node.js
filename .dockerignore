@@ -1,2 +1,15 @@
 /node_modules/
+/coverage/
+/src/
 
+.dockerignore
+.gitignore
+.node-version
+.prettierignore
+.prettierrc
+.tool-versions
+docker-compose.yml
+Dockerfile
+jest.config.js
+*.md
+tsconfig.json
